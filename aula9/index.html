@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navalha & Vinil — Barbearia Rock 80/90</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papel:#eadfc6; --tinta:#1b1712; --vinho:#8a1c26; --mostarda:#e0a72b; --jeans:#1f3552;
+  --display:'Alfa Slab One',Georgia,serif; --corpo:'Barlow','Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--corpo);background:var(--papel);color:var(--tinta);font-size:1.1rem;line-height:1.55}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--mostarda);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
+
+header{background:var(--tinta);color:var(--papel);border-bottom:6px solid var(--mostarda)}
+header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.75rem;padding-top:.9rem;padding-bottom:.9rem}
+.logo{font-family:var(--display);font-size:1.4rem;text-decoration:none;color:var(--mostarda)}
+nav{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem}
+nav a{text-decoration:none;font-weight:700;padding:.3rem 0;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--mostarda)}
+
+.cartaz{background:var(--vinho);color:var(--papel);text-align:center;padding:4.5rem 0 4rem;overflow:hidden;
+  background-image:repeating-conic-gradient(from 0deg at 50% 115%,rgba(0,0,0,.16) 0 6deg,transparent 6deg 12deg)}
+.cartaz p.dica{font-weight:700;letter-spacing:.06em;margin-bottom:1rem}
+.cartaz h1{font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,9vw,6rem);line-height:1;color:var(--papel);text-shadow:5px 5px 0 var(--tinta)}
+.cartaz .sub{max-width:34ch;margin:1.4rem auto 2rem;font-size:1.3rem}
+.botoes{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
+.btn{display:inline-block;font-family:var(--display);font-size:1.1rem;text-decoration:none;padding:.85rem 1.6rem;border:3px solid var(--tinta);
+  background:var(--mostarda);color:var(--tinta);box-shadow:5px 5px 0 var(--tinta);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--tinta)}
+.btn.alt{background:var(--papel)}
+
+section{padding:3.5rem 0}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.1;margin-bottom:1.2rem;color:var(--vinho)}
+
+.historia .wrap{display:grid;gap:2rem;grid-template-columns:1fr}
+.historia p{max-width:62ch;margin-bottom:1rem}
+.faixa{background:var(--jeans);color:var(--papel);padding:1.4rem 1.6rem;border-left:8px solid var(--mostarda)}
+.faixa strong{font-family:var(--display);font-weight:400;font-size:1.4rem;color:var(--mostarda);display:block;margin-bottom:.3rem}
+
+.repertorio{background:var(--tinta);color:var(--papel)}
+.repertorio h2{color:var(--mostarda)}
+.repertorio ol{list-style:none;max-width:720px}
+.repertorio li{display:flex;align-items:baseline;gap:.6rem;padding:.85rem 0;border-bottom:1px dashed rgba(234,223,198,.35)}
+.repertorio li b{font-size:1.25rem}
+.repertorio li i{flex:1;border-bottom:2px dotted rgba(234,223,198,.35);transform:translateY(-4px)}
+.repertorio li .p{font-family:var(--display);color:var(--mostarda)}
+.repertorio small{display:block;margin-top:1rem;opacity:.75}
+
+.ingressos .grade{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.ingresso{display:block;text-decoration:none;background:var(--papel);border:3px solid var(--tinta);padding:1.6rem;position:relative;
+  box-shadow:6px 6px 0 var(--tinta);transition:transform .12s,box-shadow .12s}
+.ingresso:hover{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--tinta)}
+.ingresso::before,.ingresso::after{content:"";position:absolute;top:50%;width:22px;height:22px;border-radius:50%;background:var(--papel);border:3px solid var(--tinta)}
+.ingresso::before{left:-14px;transform:translateY(-50%)}
+.ingresso::after{right:-14px;transform:translateY(-50%)}
+.ingresso h3{font-family:var(--display);font-weight:400;font-size:1.6rem;color:var(--vinho);margin-bottom:.4rem}
+.ingresso p{margin-bottom:1rem}
+.ingresso .ir{font-weight:700;border-bottom:3px solid var(--mostarda)}
+
+footer{background:var(--tinta);color:var(--papel);text-align:center;padding:2rem 1.25rem;border-top:6px solid var(--mostarda)}
+footer p+p{opacity:.75;margin-top:.3rem;font-size:.95rem}
+
+@media(min-width:800px){.historia .wrap{grid-template-columns:1.6fr 1fr;align-items:start}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html">Navalha &amp; Vinil</a>
+    <nav aria-label="Navegação principal">
+      <a href="#historia">Nossa história</a>
+      <a href="#repertorio">Serviços</a>
+      <a href="cadastro.php">Cadastro</a>
+      <a href="cadastrofun.php">Cadastro de funcionários</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="cartaz">
+    <div class="wrap">
+      <p class="dica">Rock no som. Navalha na mão.</p>
+      <h1>Navalha &amp; Vinil</h1>
+      <p class="sub">A barbearia de quem cresceu ouvindo rock nos anos 80 e 90. Corte clássico, barba afiada e a trilha certa.</p>
+      <div class="botoes">
+        <a class="btn" href="cadastro.php">Quero me cadastrar</a>
+        <a class="btn alt" href="#repertorio">Ver serviços</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="historia" id="historia">
+    <div class="wrap">
+      <div>
+        <h2>Aqui o tempo passa no ritmo do disco</h2>
+        <p>Nossa cadeira é daquelas que você reconhece: couro, espelho grande, toalha quente e um vinil rodando. Quem viveu os anos 80 e 90 vai se sentir em casa.</p>
+        <p>E a porta está aberta para a garotada também. Se você é jovem e quer descobrir por que esse som e esse corte nunca saíram de moda, senta que a próxima faixa é sua.</p>
+      </div>
+      <aside class="faixa">
+        <strong>Na vitrola</strong>
+        Rock nacional e internacional, do clássico ao pesado, todos os dias.
+      </aside>
+    </div>
+  </section>
+
+  <section class="repertorio" id="repertorio">
+    <div class="wrap">
+      <h2>Repertório de serviços</h2>
+      <ol>
+        <li><b>Corte clássico</b><i></i><span class="p">R$ 45</span></li>
+        <li><b>Barba com toalha quente</b><i></i><span class="p">R$ 35</span></li>
+        <li><b>Corte + barba</b><i></i><span class="p">R$ 70</span></li>
+        <li><b>Degradê / topete</b><i></i><span class="p">R$ 50</span></li>
+        <li><b>Pigmentação de cabelo e barba</b><i></i><span class="p">R$ 40</span></li>
+      </ol>
+      <small>Valores de exemplo. Ajuste conforme a tabela real da barbearia.</small>
+    </div>
+  </section>
+
+  <section class="ingressos" id="acesso">
+    <div class="wrap">
+      <h2>Entre no show</h2>
+      <div class="grade">
+        <a class="ingresso" href="cadastro.php">
+          <h3>Cadastro</h3>
+          <p>Faça seu cadastro para agendar e ser atendido na nossa cadeira.</p>
+          <span class="ir">Ir para o cadastro</span>
+        </a>
+        <a class="ingresso" href="cadastrofun.php">
+          <h3>Cadastro de funcionários</h3>
+          <p>Área para registrar barbeiros e a equipe da casa.</p>
+          <span class="ir">Ir para o cadastro de funcionários</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Navalha &amp; Vinil · Barbearia Rock 80/90</p>
+  <p>Endereço e horário de funcionamento aqui.</p>
+</footer>
+
+</body>
+</html>
